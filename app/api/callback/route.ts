@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
 
     console.log("Received code:", code);
 
-    // Exchange code for access token
     const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
         method: 'POST',
         headers: {
@@ -36,7 +35,6 @@ export async function GET(req: NextRequest) {
     const accessToken = tokenData.access_token;
     console.log('Access token:', accessToken);
 
-    // Fetch user data using the access token
     const userRes = await fetch('https://api.github.com/user', {
         headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -51,7 +49,6 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ error: 'User data not found' }, { status: 404 });
     }
 
-    // Redirect to the user page with absolute URL (Not sure how to change for vercel)
     const redirectUrl = `https://mp-6-tau.vercel.app/user?name=${userData.name}&avatar_url=${userData.avatar_url}&login=${userData.login}`;
     return NextResponse.redirect(redirectUrl);
 }
