@@ -4,8 +4,8 @@ export default function Home() {
     const handleLogin = () => {
         const clientId = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID
         const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI
-        const githubAuthURL = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user%20user:email`
-        window.location.href = githubAuthURL
+        window.location.href  = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user%20user:email`
+
     }
 
     return (
