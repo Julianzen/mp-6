@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ error: 'User data not found' }, { status: 404 });
     }
 
-    // Redirect to the user page with absolute URL
+    // Redirect to the user page with absolute URL (Not sure how to change for vercel)
     const redirectUrl = `http://localhost:3001/user?name=${userData.name}&avatar_url=${userData.avatar_url}&login=${userData.login}`;
     return NextResponse.redirect(redirectUrl);
 }
