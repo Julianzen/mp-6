@@ -11,7 +11,8 @@ export default function Home() {
     return (
         <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/egg.png')" }}>
             <div className="text-center p-8 bg-white bg-opacity-75 rounded-lg shadow-lg max-w-md w-full">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">OAuth Demo</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">I'm Trustworthy</h1>
+                <p className="text-1xl font-bold text-gray-800 mb-6">Please Login to your Github</p>
                 <button
                     onClick={handleLogin}
                     className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
