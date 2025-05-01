@@ -52,6 +52,6 @@ export async function GET(req: NextRequest) {
     }
 
     // Redirect to the user page with absolute URL (Not sure how to change for vercel)
-    const redirectUrl = `http://localhost:3001/user?name=${userData.name}&avatar_url=${userData.avatar_url}&login=${userData.login}`;
+    const redirectUrl = `https://mp-6-tau.vercel.app/user?name=${userData.name}&avatar_url=${userData.avatar_url}&login=${userData.login}`;
     return NextResponse.redirect(redirectUrl);
 }
